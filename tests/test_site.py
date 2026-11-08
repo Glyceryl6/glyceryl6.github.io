@@ -38,6 +38,29 @@ class PublicSiteTests(unittest.TestCase):
         self.assertIn('id="search-shortcut"', html)
         self.assertIn('assets/js/site.js', html)
 
+    def test_hybridclr_guides_are_present_and_self_contained(self):
+        pages = [
+            "unity/motivation.md",
+            "unity/hybridclr-support.md",
+            "unity/feasibility.md",
+            "unity/full-guide.md",
+            "unity/pitfalls.md",
+            "tools/downloads.md",
+        ]
+        for name in pages:
+            text = (ROOT / "docs" / name).read_text(encoding="utf-8")
+            self.assertGreater(len(text), 500, name)
+            self.assertNotIn("sandbox:", text, name)
+
+    def test_theme_control_offers_system_preference(self):
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("dataset.themeMode", html)
+        self.assertIn('id="theme-menu"', html)
+        self.assertIn("prefers-color-scheme: dark", html)
+        script = (ROOT / "assets/js/site.js").read_text(encoding="utf-8")
+        self.assertIn("glyceryl-theme-mode", script)
+        self.assertIn("prefers-color-scheme: dark", script)
+
     def test_public_docs_include_caution_and_do_not_offer_hotfix_sources(self):
         warning = (ROOT / "docs/unity/safety.md").read_text(encoding="utf-8")
         self.assertIn("永久封禁", warning)
