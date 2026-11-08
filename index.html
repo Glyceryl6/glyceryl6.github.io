@@ -53,6 +53,7 @@
   <div id="scroll-progress" aria-hidden="true"></div>
   <div id="main-content" class="main-anchor" tabindex="-1"></div>
   <main id="app" aria-live="polite"><div class="site-loading">正在加载开发文档…</div></main>
+  <script src="assets/js/search-paths.js"></script>
   <script>
     window.$docsify = {
       name: 'Glyceryl',
@@ -70,7 +71,7 @@
       notFoundPage: '404.md',
       search: {
         maxAge: 86400000,
-        paths: 'auto',
+        paths: window.GlycerylSearchPaths || 'auto',
         depth: 3,
         placeholder: '搜索教程、错误与 API…',
         noData: '没有找到匹配内容'

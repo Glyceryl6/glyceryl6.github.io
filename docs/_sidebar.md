@@ -26,6 +26,7 @@
   - [版本迁移](sdk/migration.md)
 
 - **工具与网站**
+  - [项目与示例](projects/README.md)
   - [开发工具简介](tools/README.md)
   - [独立 MOD 导出](tools/mod-forge.md)
   - [项目公开边界](about/publication-policy.md)
