@@ -42,7 +42,7 @@ def verify_new_links() -> int:
     checked = 0
     for p in BASE_DOCS.rglob("*.md"):
         rel = p.relative_to(BASE_DOCS)
-        if str(rel).startswith(("0序章/", "1基础/", "2进阶/", "3杂七杂八/")):
+        if rel.parts and rel.parts[0] in {"0序章", "1基础", "2进阶", "3杂七杂八"}:
             continue  # preserve historical articles verbatim, including old links
         for target in ROUTE_PATTERN.findall(p.read_text(encoding="utf-8")):
             target = target.split(" ", 1)[0]
