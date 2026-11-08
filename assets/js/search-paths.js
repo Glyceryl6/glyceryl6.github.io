@@ -24,12 +24,18 @@ window.GlycerylSearchPaths = [
   "/sdk/migration",
   "/sdk/native-api",
   "/tools/README",
+  "/tools/downloads",
   "/tools/mod-forge",
   "/unity/README",
   "/unity/bepinex",
   "/unity/build-and-references",
+  "/unity/feasibility",
+  "/unity/full-guide",
+  "/unity/hybridclr-support",
   "/unity/il2cpp-hybridclr",
   "/unity/interop-compatibility",
+  "/unity/motivation",
+  "/unity/pitfalls",
   "/unity/safety",
   "/unity/troubleshooting"
 ];
