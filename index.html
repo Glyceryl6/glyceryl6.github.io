@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Glyceryl's Developer Hub：Minecraft 模组历史教程、Unity 开发笔记、SDK 与开发工具文档。">
-  <meta name="theme-color" content="#10182b">
+  <meta name="description" content="Glyceryl's Developer Hub：Unity IL2CPP + HybridCLR 游戏 MOD 开发教程、Minecraft 历史教程、SDK 与开发工具文档。">
+  <meta name="theme-color" id="theme-color" content="#10182b">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Glyceryl's Developer Hub · 开发笔记</title>
   <link rel="icon" type="image/svg+xml" href="assets/icons/mark.svg">
@@ -12,39 +12,64 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <link rel="stylesheet" href="assets/css/site.css">
   <script>
+    /* Resolve the colour mode before first paint so the page never flashes. */
     (function () {
+      var root = document.documentElement;
+      var mode = 'auto';
       try {
-        var stored = localStorage.getItem('glyceryl-theme');
-        document.documentElement.dataset.theme = stored === 'light' || stored === 'dark'
-          ? stored
-          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      } catch (_) {
-        document.documentElement.dataset.theme = 'light';
-      }
+        var stored = localStorage.getItem('glyceryl-theme-mode');
+        var legacy = localStorage.getItem('glyceryl-theme');
+        if (stored === 'auto' || stored === 'light' || stored === 'dark') mode = stored;
+        else if (legacy === 'light' || legacy === 'dark') mode = legacy;
+      } catch (_) { /* storage disabled */ }
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.themeMode = mode;
+      root.dataset.theme = mode === 'auto' ? (prefersDark ? 'dark' : 'light') : mode;
     }());
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳转至正文</a>
   <header class="site-header" role="banner">
-    <a class="site-brand" href="#/" aria-label="Glyceryl's Developer Hub 首页">
-      <img src="assets/icons/mark.svg" width="34" height="34" alt="" aria-hidden="true">
-      <span><strong>Glyceryl</strong><small>Developer Hub</small></span>
-    </a>
-    <nav class="site-topnav" aria-label="主导航">
-      <a data-section="home" href="#/">首页</a>
-      <a data-section="minecraft" href="#/minecraft/README.md">Minecraft</a>
-      <a data-section="unity" href="#/unity/README.md">Unity</a>
-      <a data-section="sdk" href="#/sdk/README.md">SDK</a>
-      <a data-section="tools" href="#/tools/README.md">工具</a>
-    </nav>
+    <div class="header-left">
+      <a class="site-brand" href="#/" aria-label="Glyceryl's Developer Hub 首页">
+        <img src="assets/icons/mark.svg" width="34" height="34" alt="" aria-hidden="true">
+        <span><strong>Glyceryl</strong><small>Developer Hub</small></span>
+      </a>
+      <nav class="site-topnav" aria-label="主导航">
+        <a data-section="home" href="#/">首页</a>
+        <a data-section="minecraft" href="#/minecraft/README.md">Minecraft</a>
+        <a data-section="unity" href="#/unity/README.md">Unity</a>
+        <a data-section="sdk" href="#/sdk/README.md">SDK</a>
+        <a data-section="tools" href="#/tools/README.md">工具</a>
+      </nav>
+    </div>
     <div class="header-actions">
       <button id="search-shortcut" type="button" class="header-icon" title="搜索文档" aria-label="搜索文档">
         <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
       </button>
-      <button id="theme-toggle" type="button" class="header-icon" title="切换明暗主题" aria-label="切换明暗主题" aria-pressed="false">
-        <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20.5 13.1A8.8 8.8 0 0 1 10.9 3.5 8.7 8.7 0 1 0 20.5 13.1Z"/></svg>
-      </button>
+      <div class="theme-control">
+        <button id="theme-toggle" type="button" class="header-icon" title="配色模式：跟随系统" aria-label="配色模式：跟随系统，点击选择" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
+          <svg class="theme-toggle-icon" data-icon="auto" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8a8.2 8.2 0 0 1 0 16.4Z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-toggle-icon" data-icon="light" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+          <svg class="theme-toggle-icon" data-icon="dark" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 13.1A8.8 8.8 0 0 1 10.9 3.5 8.7 8.7 0 1 0 20.5 13.1Z"/></svg>
+        </button>
+        <div class="theme-menu" id="theme-menu" role="menu" aria-label="配色模式" hidden>
+          <p class="theme-menu-title">配色模式</p>
+          <button type="button" class="theme-option" role="menuitemradio" data-select-mode="auto" aria-checked="true">
+            <svg class="theme-check" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            <span>跟随系统</span>
+          </button>
+          <button type="button" class="theme-option" role="menuitemradio" data-select-mode="light" aria-checked="false">
+            <svg class="theme-check" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            <span>浅色</span>
+          </button>
+          <button type="button" class="theme-option" role="menuitemradio" data-select-mode="dark" aria-checked="false">
+            <svg class="theme-check" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            <span>深色</span>
+          </button>
+        </div>
+      </div>
       <a class="header-github" href="https://github.com/Glyceryl6/glyceryl6.github.io" rel="noopener noreferrer" target="_blank" aria-label="GitHub 仓库">GitHub
         <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M8 7h9v9"/></svg>
       </a>
