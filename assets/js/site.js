@@ -115,18 +115,21 @@
 
   /* ---------- navigation state ---------- */
 
-  function currentSection() {
+  function currentRoute() {
     var route = decodeURIComponent((location.hash || '#/').replace(/^#\//, ''));
-    if (!route || route === '/') return 'home';
-    if (/^(0序章|1基础|2进阶|3杂七杂八|minecraft)\//.test(route)) return 'minecraft';
-    var section = route.split('/')[0];
-    return ['unity', 'sdk', 'tools', 'about'].indexOf(section) !== -1 ? section : 'home';
+    if (!route || route === '/' || route === 'home.md' || route === 'history.md') return 'home';
+    return route;
   }
 
   function updateNavigation() {
-    var active = currentSection();
+    var route = currentRoute();
+    var section = route === 'home' ? 'home' : route.split('/')[0];
     navLinks.forEach(function (link) {
-      if (link.getAttribute('data-section') === active) link.setAttribute('aria-current', 'page');
+      var exact = link.getAttribute('data-route');
+      var active = exact
+        ? route === exact.replace(/^\//, '')
+        : link.getAttribute('data-section') === section;
+      if (active) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
   }
@@ -177,7 +180,8 @@
       closeMenu(false);
       updateNavigation();
       updateProgress();
-      document.title = 'Glyceryl\'s Developer Hub · 开发笔记';
+      document.title = document.body.getAttribute('data-site-title')
+        || 'Glyceryl\'s Developer Hub · 开发笔记';
     }
   };
 
