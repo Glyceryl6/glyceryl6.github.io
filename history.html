@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/icons/mark.svg">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261110">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261109b">
   <script>
     (function () {
       var root = document.documentElement;
@@ -76,7 +76,7 @@
   <div id="scroll-progress" aria-hidden="true"></div>
   <div id="main-content" class="main-anchor" tabindex="-1"></div>
   <main id="app" aria-live="polite"><div class="site-loading">正在加载历史教程…</div></main>
-  <script src="assets/js/history-search-paths.js?v=20261110"></script>
+  <script src="assets/js/history-search-paths.js?v=20261109b"></script>
   <script>
     window.$docsify = {
       name: '历史教程',
@@ -85,7 +85,12 @@
       homepage: 'history.md',
       loadSidebar: true,
       loadNavbar: false,
-      alias: { '/.*/_sidebar.md': '/history-sidebar.md' },
+      /* Root routes ask for /_sidebar.md; nested routes ask for /<dir>/_sidebar.md.
+         Both must resolve to the history sidebar, otherwise Unity's list is used. */
+      alias: {
+        '/_sidebar.md': '/history-sidebar.md',
+        '/.*/_sidebar.md': '/history-sidebar.md'
+      },
       routerMode: 'hash',
       maxLevel: 3,
       subMaxLevel: 2,
@@ -106,7 +111,7 @@
       }]
     };
   </script>
-  <script src="assets/js/site.js?v=20261110" defer></script>
+  <script src="assets/js/site.js?v=20261109b" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
