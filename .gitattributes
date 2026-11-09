@@ -1,0 +1,6 @@
+# 历史教程按原始字节保留（tests/legacy-sha256.json 会逐字节校验）。
+# 禁止 Git 对换行做自动转换，否则 Windows/CI 检出的内容与校验值不一致。
+docs/0序章/** -text
+docs/1基础/** -text
+docs/2进阶/** -text
+docs/3杂七杂八/** -text
