@@ -23,6 +23,16 @@
 
 ### 资源通常不在一个地方
 
+<figure class="doc-figure">
+  <div class="doc-figure-frame" role="img" aria-label="占位图：Addressables 资源目录">
+    <span class="doc-figure-tag">图片占位</span>
+    <strong>Addressables 资源目录</strong>
+    <span class="doc-figure-note">说明：安装目录下的 <code>StreamingAssets/aa/&lt;平台&gt;/</code> 与用户缓存中的 <code>com.unity.addressables/AssetBundles/</code> 对照图。</span>
+    <span class="doc-figure-hint">后续替换为本地目录截图（注意遮挡个人信息）</span>
+  </div>
+  <figcaption>图 1 · 建议配图：两处 Bundle 目录的对照。</figcaption>
+</figure>
+
 Unity 的 Addressables 会把资源分散到两处：安装目录下的 `StreamingAssets/aa/<平台>/`，以及用户目录下的下载缓存（例如 Windows 上的 `%USERPROFILE%\AppData\LocalLow\<公司>\<产品>\com.unity.addressables\AssetBundles\`）。
 
 第二个位置最容易被漏掉——只解包安装目录，就会得到“角色素材缺失”的错觉。另外，Bundle 常以哈希命名，**资源名与文件的对应关系记录在 catalog 里**；哈希文件名不代表资源损坏或丢失。

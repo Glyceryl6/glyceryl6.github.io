@@ -129,6 +129,16 @@ public class Plugin : BasePlugin
 
 完成标志：`Astral Probe loaded.` 出现，游戏不闪退。
 
+<figure class="doc-figure">
+  <div class="doc-figure-frame" role="img" aria-label="占位图：BepInEx 日志输出">
+    <span class="doc-figure-tag">图片占位</span>
+    <strong>BepInEx 日志输出</strong>
+    <span class="doc-figure-note">说明：<code>BepInEx/LogOutput.txt</code> 中出现插件加载日志的样子，用于对照“宿主是否正常启动”。</span>
+    <span class="doc-figure-hint">后续替换为实际日志截图</span>
+  </div>
+  <figcaption>图 1 · 建议配图：空插件成功加载后的日志片段。</figcaption>
+</figure>
+
 这一步看起来毫无技术含量，但它是后面所有问题的分界线：**插件入口能跑，说明宿主、位数、依赖、加载路径全都对了。**
 
 ### A5 · 加入运行时访问库
@@ -349,3 +359,12 @@ Addressables 的 catalog 记录资源地址、依赖和 Bundle 位置。游戏�
 - [ ] 游戏更新后，有一套重新验证的流程
 
 第一个推荐做完整的功能是“**快捷键触发的自定义提示**”：它同时覆盖插件加载、类型查找、运行时调用和输入处理，但完全不碰网络与规则。
+
+照着做的话，接下来可以依次看：
+
+1. [案例一：快捷键](unity/case-keybinds.md)——配置绑定与输入处理；
+2. [案例二：自定义提示](unity/case-tips.md)——调用原版提示窗口；
+3. [案例三：窗口与场景监听](unity/case-window.md)——判断当前界面与清理时机；
+4. [案例四：设置面板与配置](unity/case-settings.md)——把开关交给用户。
+
+过程中遇到具体故障，查[实践中的坑](unity/pitfalls.md)；想知道某个方案为什么被放弃，查[开发手记](unity/dev-notes.md)。
