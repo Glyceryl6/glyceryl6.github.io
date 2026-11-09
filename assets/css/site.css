@@ -55,24 +55,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
 .skip-link { position: fixed; top: -80px; left: 12px; z-index: 200; background: var(--site-surface); color: var(--site-text); padding: 10px 16px; border-radius: 10px; text-decoration: none; box-shadow: var(--site-shadow); }
 .skip-link:focus { top: 10px; }
 
-/* Header: brand, then section nav immediately on its right, actions pinned right */
-.site-header { position: fixed; inset: 0 0 auto; z-index: 90; display: flex; align-items: center; justify-content: flex-start; gap: clamp(12px, 1.6vw, 26px); height: 76px; padding: 0 clamp(18px, 3.2vw, 52px); background: var(--site-header-bg); border-bottom: 1px solid var(--site-border); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: box-shadow .2s ease, background .2s ease; }
+/* Header: three fixed grid columns — brand, nav on its right, actions pinned right.
+   Grid tracks guarantee the nav can never overlap the action buttons. */
+.site-header { position: fixed; inset: 0 0 auto; z-index: 90; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: clamp(12px, 1.6vw, 26px); height: 76px; padding: 0 clamp(18px, 3.2vw, 52px); background: var(--site-header-bg); border-bottom: 1px solid var(--site-border); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: box-shadow .2s ease, background .2s ease; }
 /* Docsify renders an .app-nav only when a navbar exists; keep it out of the header if enabled. */
 .app-nav { display: none; }
 .site-header.is-scrolled { box-shadow: 0 10px 34px rgba(5, 12, 26, .13); }
-.site-brand { display: flex; align-items: center; flex: 0 0 auto; gap: 10px; color: var(--site-text); text-decoration: none; line-height: 1.03; border-radius: 10px; }
+.site-brand { grid-column: 1; justify-self: start; display: flex; align-items: center; flex: 0 0 auto; gap: 10px; color: var(--site-text); text-decoration: none; line-height: 1.03; border-radius: 10px; }
 .site-brand img { display: block; border-radius: 9px; box-shadow: 0 5px 14px #131b362b; }
 .site-brand span { display: flex; flex-direction: column; gap: 3px; white-space: nowrap; }
 .site-brand strong { font-size: 16px; font-weight: 760; letter-spacing: -.3px; color: var(--site-strong); }
 .site-brand small { font-size: 10px; letter-spacing: 1.65px; font-weight: 700; color: var(--site-muted); text-transform: uppercase; }
-.site-topnav { display: flex; align-items: center; gap: 2px; flex: 0 1 auto; min-width: 0; overflow: hidden; }
+.site-topnav { grid-column: 2; justify-self: start; display: flex; align-items: center; gap: 2px; flex: 0 1 auto; min-width: 0; overflow: hidden; }
 .site-topnav a { position: relative; color: var(--site-muted); text-decoration: none; border-radius: 9px; padding: 8px 11px; font-size: 13px; font-weight: 650; white-space: nowrap; transition: background .18s, color .18s; }
 .site-topnav a:hover { background: var(--site-surface-soft); color: var(--site-strong); }
 .site-topnav a[aria-current="page"] { background: var(--site-accent-soft); color: var(--site-accent); font-weight: 750; }
 .site-topnav a[aria-current="page"]::after { content: ''; position: absolute; left: 11px; right: 11px; bottom: 3px; height: 2px; border-radius: 2px; background: currentColor; opacity: .75; }
 .site-topnav a.nav-history::after { content: '↗'; margin-left: 4px; font-size: 10px; line-height: 1; opacity: .7; }
 .site-topnav a[aria-current="page"].nav-history::after { content: '↗'; position: static; left: auto; right: auto; bottom: auto; height: auto; background: none; opacity: .85; }
-.header-actions { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; margin-left: auto; padding-left: 6px; }
+.header-actions { grid-column: 3; justify-self: end; display: flex; align-items: center; gap: 8px; flex: 0 0 auto; padding-left: 8px; }
 .header-icon { width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; color: var(--site-muted); background: transparent; border: 1px solid transparent; border-radius: 10px; cursor: pointer; padding: 0; }
 .header-icon:hover { border-color: var(--site-border); background: var(--site-surface-soft); color: var(--site-strong); }
 .header-github { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; color: var(--site-text); border: 1px solid var(--site-border); border-radius: 10px; font-weight: 700; font-size: 12px; text-decoration: none; }
