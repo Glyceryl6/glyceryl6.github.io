@@ -10,7 +10,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/icons/mark.svg">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261110">
   <script>
     /* Resolve the colour mode before first paint so the page never flashes. */
     (function () {
@@ -28,22 +28,20 @@
     }());
   </script>
 </head>
-<body>
+<body data-site-title="Glyceryl's Developer Hub · 开发笔记">
   <a class="skip-link" href="#main-content">跳转至正文</a>
   <header class="site-header" role="banner">
-    <div class="header-left">
-      <a class="site-brand" href="#/" aria-label="Glyceryl's Developer Hub 首页">
-        <img src="assets/icons/mark.svg" width="34" height="34" alt="" aria-hidden="true">
-        <span><strong>Glyceryl</strong><small>Developer Hub</small></span>
-      </a>
-      <nav class="site-topnav" aria-label="主导航">
-        <a data-section="home" href="#/">首页</a>
-        <a data-section="minecraft" href="#/minecraft/README.md">Minecraft</a>
-        <a data-section="unity" href="#/unity/README.md">Unity</a>
-        <a data-section="sdk" href="#/sdk/README.md">SDK</a>
-        <a data-section="tools" href="#/tools/README.md">工具</a>
-      </nav>
-    </div>
+    <a class="site-brand" href="#/" aria-label="Glyceryl's Developer Hub 首页">
+      <img src="assets/icons/mark.svg" width="34" height="34" alt="" aria-hidden="true">
+      <span><strong>Glyceryl</strong><small>Developer Hub</small></span>
+    </a>
+    <nav class="site-topnav" aria-label="主导航">
+      <a data-section="home" href="#/">首页</a>
+      <a data-section="unity" href="#/unity/README.md">Unity</a>
+      <a data-section="sdk" href="#/sdk/README.md">SDK</a>
+      <a data-section="tools" href="#/tools/README.md">工具</a>
+      <a class="nav-history" href="history.html" target="_self">历史教程</a>
+    </nav>
     <div class="header-actions">
       <button id="search-shortcut" type="button" class="header-icon" title="搜索文档" aria-label="搜索文档">
         <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
@@ -78,7 +76,7 @@
   <div id="scroll-progress" aria-hidden="true"></div>
   <div id="main-content" class="main-anchor" tabindex="-1"></div>
   <main id="app" aria-live="polite"><div class="site-loading">正在加载开发文档…</div></main>
-  <script src="assets/js/search-paths.js"></script>
+  <script src="assets/js/search-paths.js?v=20261110"></script>
   <script>
     window.$docsify = {
       name: 'Glyceryl',
@@ -108,7 +106,7 @@
       }]
     };
   </script>
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=20261110" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>

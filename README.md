@@ -12,12 +12,15 @@
 
 | 顺序 | 页面 | 内容 |
 |---|---|---|
-| 00 | [写这套笔记的初衷](https://glyceryl6.github.io/#/unity/motivation.md) | Mono 时代的教程为什么在这里失效 |
-| 01 | [为什么官方版还不支持 HybridCLR](https://glyceryl6.github.io/#/unity/hybridclr-support.md) | 启动崩溃发生在哪一层，修复改了什么 |
-| 02 | [开发可行性分析](https://glyceryl6.github.io/#/unity/feasibility.md) | 资源层、代码层、注入层的边界 |
-| 03 | [开发完整指南](https://glyceryl6.github.io/#/unity/full-guide.md) | 从空工程到第一个可用功能 |
-| 04 | [实践中的坑](https://glyceryl6.github.io/#/unity/pitfalls.md) | 现象 → 根因 → 做法 |
-| 05 | [工具与下载](https://glyceryl6.github.io/#/tools/downloads.md) | 各环节工具清单与版本对照 |
+| 00 | [写这套笔记的初衷](https://glyceryl6.github.io/#/unity/motivation.md) | Mono 时代的教程为什么在这里失效，为什么拿这款游戏当例子 |
+| 01 | [Unity MOD 生态](https://glyceryl6.github.io/#/unity/ecosystem.md) | Mono / IL2CPP / HybridCLR 三代技术栈与代表作品 |
+| 02 | [为什么官方版还不支持 HybridCLR](https://glyceryl6.github.io/#/unity/hybridclr-support.md) | 启动崩溃发生在哪一层，修复改了什么 |
+| 03 | [开发可行性分析](https://glyceryl6.github.io/#/unity/feasibility.md) | 资源层、代码层、注入层的边界 |
+| 04 | [开发完整指南](https://glyceryl6.github.io/#/unity/full-guide.md) | 从空工程到第一个可用功能 |
+| 05 | [实战案例](https://glyceryl6.github.io/#/unity/case-keybinds.md) | 快捷键、提示、窗口监听、设置面板 |
+| 06 | [开发手记](https://glyceryl6.github.io/#/unity/dev-notes.md) | 被放弃的方案与取舍 |
+| 07 | [实践中的坑](https://glyceryl6.github.io/#/unity/pitfalls.md) | 现象 → 根因 → 做法 |
+| 08 | [工具与下载](https://glyceryl6.github.io/#/tools/downloads.md) | 各环节工具清单与版本对照 |
 
 ## 文档目录
 
@@ -26,16 +29,17 @@
 | Unity / IL2CPP / HybridCLR | [专题首页](https://glyceryl6.github.io/#/unity/README.md) |
 | SDK | [API 与接入文档](https://glyceryl6.github.io/#/sdk/README.md) |
 | 开发工具 | [工具专题](https://glyceryl6.github.io/#/tools/README.md) · [下载清单](https://glyceryl6.github.io/#/tools/downloads.md) |
-| Minecraft 旧教程（1.19.2 / Forge 43.2.0） | [历史入口](https://glyceryl6.github.io/#/minecraft/README.md) · [完整目录](https://glyceryl6.github.io/#/minecraft/目录.md) |
+| Minecraft 旧教程（1.19.2 / Forge 43.2.0） | [历史教程独立页](https://glyceryl6.github.io/history.html)（顶部导航“历史教程”） |
 | 网站使用与发布原则 | [关于本站](https://glyceryl6.github.io/#/about/README.md) · [公开边界](https://glyceryl6.github.io/#/about/publication-policy.md) |
 
-仓库中的 `docs/` 是文档源文件；`docs/home.md` 是首页。旧教程仍位于 `docs/0序章/`、`docs/1基础/`、`docs/2进阶/`、`docs/3杂七杂八/`，**目录和历史链接不变**。其中有一些原本尚未写作的 0 字节页面，并未擅自替换成虚构内容。
+仓库中的 `docs/` 是文档源文件；`docs/home.md` 是首页，`docs/history.md` 是历史教程首页，两者分别由 `index.html` 与 `history.html` 加载。旧教程仍位于 `docs/0序章/`、`docs/1基础/`、`docs/2进阶/`、`docs/3杂七杂八/`，**目录和历史链接不变**，但不再出现在主站侧边栏。其中有一些原本尚未写作的 0 字节页面，并未擅自替换成虚构内容。
 
 ## 站点特性
 
 - **配色**：顶部按钮提供“跟随系统 / 浅色 / 深色”三档；默认跟随系统，选择只保存在本机浏览器。
-- **导航**：分类导航位于 Logo 右侧，页面滚动时保持可见；窄屏下收起，改用左侧目录。
-- **搜索**：左侧目录搜索框，`Ctrl + K` / `⌘ + K` 聚焦；索引范围见 `assets/js/search-paths.js`。
+- **导航**：分类导航紧跟 Logo 右侧，右侧按钮固定，二者不会重叠；窄屏下导航收起，改用左侧目录。
+- **历史教程**：顶部“历史教程”进入独立页面 `history.html`，该页有自己的导航栏，可返回主站。
+- **搜索**：左侧目录搜索框，`Ctrl + K` / `⌘ + K` 聚焦；主站与历史教程各有独立索引。
 
 ## 本地预览
 

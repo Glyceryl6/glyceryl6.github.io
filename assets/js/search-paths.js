@@ -1,22 +1,9 @@
 // Explicit index of nonempty public Markdown pages; legacy URLs remain unchanged.
 window.GlycerylSearchPaths = [
-  "/0序章/前言",
-  "/0序章/建议",
-  "/0序章/开发资源",
-  "/0序章/首页",
-  "/1基础/0前期配置/Mixin",
-  "/1基础/0前期配置/Parchment",
-  "/1基础/0前期配置/引入JEI",
-  "/1基础/0前期配置/项目配置",
-  "/1基础/1物品/创造模式物品栏",
-  "/1基础/1物品/第一个物品",
-  "/1基础/1物品/食物",
   "/about/README",
   "/about/changelog",
   "/about/publication-policy",
   "/",
-  "/minecraft/README",
-  "/minecraft/目录",
   "/projects/README",
   "/sdk/README",
   "/sdk/getting-started",
@@ -29,6 +16,8 @@ window.GlycerylSearchPaths = [
   "/unity/README",
   "/unity/bepinex",
   "/unity/build-and-references",
+  "/unity/ecosystem",
+  "/unity/dev-notes",
   "/unity/feasibility",
   "/unity/full-guide",
   "/unity/hybridclr-support",
@@ -37,5 +26,9 @@ window.GlycerylSearchPaths = [
   "/unity/motivation",
   "/unity/pitfalls",
   "/unity/safety",
-  "/unity/troubleshooting"
+  "/unity/troubleshooting",
+  "/unity/case-keybinds",
+  "/unity/case-tips",
+  "/unity/case-window",
+  "/unity/case-settings"
 ];
