@@ -61,6 +61,18 @@ class PublicSiteTests(unittest.TestCase):
         self.assertIn("glyceryl-theme-mode", script)
         self.assertIn("prefers-color-scheme: dark", script)
 
+    def test_history_site_is_separate_from_the_main_navigation(self):
+        main = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="history.html"', main)
+        self.assertNotIn("#/minecraft/README.md", main)
+        self.assertTrue((ROOT / "history.html").is_file())
+        sidebar = (ROOT / "docs/_sidebar.md").read_text(encoding="utf-8")
+        self.assertNotIn("minecraft/目录.md", sidebar)
+        self.assertIn("history.html", sidebar)
+        history = (ROOT / "history.html").read_text(encoding="utf-8")
+        self.assertIn("history-sidebar.md", history)
+        self.assertIn("homepage: 'history.md'", history)
+
     def test_public_docs_include_caution_and_do_not_offer_hotfix_sources(self):
         warning = (ROOT / "docs/unity/safety.md").read_text(encoding="utf-8")
         self.assertIn("永久封禁", warning)
