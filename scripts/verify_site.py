@@ -48,6 +48,12 @@ def verify_new_links() -> int:
             target = target.split(" ", 1)[0]
             if target.startswith(("http:", "https:", "mailto:", "tel:")):
                 continue
+            if target.endswith(".html"):
+                # Standalone pages such as history.html live next to index.html.
+                if not (ROOT / target.lstrip("/")).is_file():
+                    raise AssertionError(f"{rel}: 找不到独立页面 {target}")
+                checked += 1
+                continue
             if target.startswith("#/mes/"):
                 raise AssertionError(f"无效内部路由：{target}")
             if target.startswith("#/"):
@@ -65,7 +71,9 @@ def verify_new_links() -> int:
 
 
 def verify_built_output(dist: Path) -> int:
-    required = ["index.html", ".nojekyll", "docs/home.md", "docs/_sidebar.md", "assets/css/site.css", "assets/js/site.js"]
+    required = ["index.html", "history.html", ".nojekyll", "docs/home.md", "docs/history.md",
+                "docs/_sidebar.md", "docs/history-sidebar.md",
+                "assets/css/site.css", "assets/js/site.js", "assets/js/history-search-paths.js"]
     for name in required:
         if not (dist / name).is_file():
             raise AssertionError(f"发布产物缺少：{name}")

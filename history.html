@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Minecraft 1.19.2 / Forge 43.2.0 历史教程归档：原站文章与图片按原路径保留。">
+  <meta name="theme-color" id="theme-color" content="#10182b">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Minecraft 历史教程 · Glyceryl</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/mark.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261110">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var mode = 'auto';
+      try {
+        var stored = localStorage.getItem('glyceryl-theme-mode');
+        var legacy = localStorage.getItem('glyceryl-theme');
+        if (stored === 'auto' || stored === 'light' || stored === 'dark') mode = stored;
+        else if (legacy === 'light' || legacy === 'dark') mode = legacy;
+      } catch (_) { /* storage disabled */ }
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.themeMode = mode;
+      root.dataset.theme = mode === 'auto' ? (prefersDark ? 'dark' : 'light') : mode;
+    }());
+  </script>
+</head>
+<body data-site-title="Minecraft 历史教程 · Glyceryl">
+  <a class="skip-link" href="#main-content">跳转至正文</a>
+  <header class="site-header" role="banner">
+    <a class="site-brand" href="history.html#/history.md" aria-label="历史教程首页">
+      <img src="assets/icons/mark.svg" width="34" height="34" alt="" aria-hidden="true">
+      <span><strong>Glyceryl</strong><small>历史教程</small></span>
+    </a>
+    <nav class="site-topnav" aria-label="历史教程导航">
+      <a data-section="home" href="history.html#/history.md">全部目录</a>
+      <a data-route="/0序章/首页.md" href="history.html#/0序章/首页.md">序章</a>
+      <a data-route="/0序章/建议.md" href="history.html#/0序章/建议.md">开发建议</a>
+      <a data-route="/1基础/0前期配置/项目配置.md" href="history.html#/1基础/0前期配置/项目配置.md">环境配置</a>
+      <a data-route="/1基础/1物品/第一个物品.md" href="history.html#/1基础/1物品/第一个物品.md">第一个物品</a>
+      <a data-route="/1基础/1物品/食物.md" href="history.html#/1基础/1物品/食物.md">食物与效果</a>
+    </nav>
+    <div class="header-actions">
+      <button id="search-shortcut" type="button" class="header-icon" title="搜索历史教程" aria-label="搜索历史教程">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+      </button>
+      <div class="theme-control">
+        <button id="theme-toggle" type="button" class="header-icon" title="配色模式：跟随系统" aria-label="配色模式：跟随系统，点击选择" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
+          <svg class="theme-toggle-icon" data-icon="auto" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8.2"/><path d="M12 3.8a8.2 8.2 0 0 1 0 16.4Z" fill="currentColor" stroke="none"/></svg>
+          <svg class="theme-toggle-icon" data-icon="light" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+          <svg class="theme-toggle-icon" data-icon="dark" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.5 13.1A8.8 8.8 0 0 1 10.9 3.5 8.7 8.7 0 1 0 20.5 13.1Z"/></svg>
+        </button>
+        <div class="theme-menu" id="theme-menu" role="menu" aria-label="配色模式" hidden>
+          <p class="theme-menu-title">配色模式</p>
+          <button type="button" class="theme-option" role="menuitemradio" data-select-mode="auto" aria-checked="true">
+            <svg class="theme-check" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            <span>跟随系统</span>
+          </button>
+          <button type="button" class="theme-option" role="menuitemradio" data-select-mode="light" aria-checked="false">
+            <svg class="theme-check" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            <span>浅色</span>
+          </button>
+          <button type="button" class="theme-option" role="menuitemradio" data-select-mode="dark" aria-checked="false">
+            <svg class="theme-check" aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7"/></svg>
+            <span>深色</span>
+          </button>
+        </div>
+      </div>
+      <a class="header-github" href="index.html" target="_self" aria-label="返回主站">返回主站
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </header>
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <div id="main-content" class="main-anchor" tabindex="-1"></div>
+  <main id="app" aria-live="polite"><div class="site-loading">正在加载历史教程…</div></main>
+  <script src="assets/js/history-search-paths.js?v=20261110"></script>
+  <script>
+    window.$docsify = {
+      name: '历史教程',
+      repo: '',
+      basePath: 'docs/',
+      homepage: 'history.md',
+      loadSidebar: true,
+      loadNavbar: false,
+      alias: { '/.*/_sidebar.md': '/history-sidebar.md' },
+      routerMode: 'hash',
+      maxLevel: 3,
+      subMaxLevel: 2,
+      auto2top: true,
+      externalLinkTarget: '_blank',
+      notFoundPage: '404.md',
+      search: {
+        maxAge: 86400000,
+        paths: window.GlycerylHistorySearchPaths || 'auto',
+        depth: 3,
+        placeholder: '搜索历史教程…',
+        noData: '没有找到匹配内容'
+      },
+      plugins: [function (hook) {
+        hook.doneEach(function () {
+          if (window.GlycerylSite) window.GlycerylSite.onRouteChange();
+        });
+      }]
+    };
+  </script>
+  <script src="assets/js/site.js?v=20261110" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-csharp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+</body>
+</html>

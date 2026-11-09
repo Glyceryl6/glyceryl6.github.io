@@ -5,12 +5,20 @@
 - **Unity · IL2CPP + HybridCLR**
   - [专题首页](unity/README.md)
   - [写这套笔记的初衷](unity/motivation.md)
+  - [Unity MOD 生态](unity/ecosystem.md)
   - [为什么官方版还不支持 HybridCLR](unity/hybridclr-support.md)
   - [开发可行性分析](unity/feasibility.md)
   - [开发完整指南](unity/full-guide.md)
-  - [实践中的坑](unity/pitfalls.md)
 
-- **概念与排错**
+- **实战案例**
+  - [快捷键](unity/case-keybinds.md)
+  - [自定义提示](unity/case-tips.md)
+  - [窗口与场景监听](unity/case-window.md)
+  - [设置面板与配置](unity/case-settings.md)
+
+- **经验与排错**
+  - [开发手记](unity/dev-notes.md)
+  - [实践中的坑](unity/pitfalls.md)
   - [IL2CPP 与 HybridCLR](unity/il2cpp-hybridclr.md)
   - [BepInEx 与工程边界](unity/bepinex.md)
   - [Il2CppInterop 兼容性](unity/interop-compatibility.md)
@@ -31,13 +39,8 @@
   - [独立 MOD 导出](tools/mod-forge.md)
   - [项目与示例](projects/README.md)
 
-- **Minecraft · 历史教程**
-  - [教程入口](minecraft/README.md)
-  - [全部历史目录](minecraft/目录.md)
-  - [搭建 Forge 开发环境](1基础/0前期配置/项目配置.md)
-  - [创建第一个物品](1基础/1物品/第一个物品.md)
-  - [食物与效果](1基础/1物品/食物.md)
-  - [旧版前言](0序章/前言.md)
+- **历史教程**
+  - <a href="history.html" target="_self">Minecraft 1.19.2 归档</a>
 
 - **关于**
   - [项目公开边界](about/publication-policy.md)
