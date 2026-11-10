@@ -55,25 +55,28 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
 .skip-link { position: fixed; top: -80px; left: 12px; z-index: 200; background: var(--site-surface); color: var(--site-text); padding: 10px 16px; border-radius: 10px; text-decoration: none; box-shadow: var(--site-shadow); }
 .skip-link:focus { top: 10px; }
 
-/* Header: three fixed grid columns — brand, nav on its right, actions pinned right.
-   Grid tracks guarantee the nav can never overlap the action buttons. */
-.site-header { position: fixed; inset: 0 0 auto; z-index: 90; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: clamp(12px, 1.6vw, 26px); height: 76px; padding: 0 clamp(18px, 3.2vw, 52px); background: var(--site-header-bg); border-bottom: 1px solid var(--site-border); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: box-shadow .2s ease, background .2s ease; }
+/* Header: brand cluster (logo + nav) on the left, tools (search/theme/github) on the right */
+.site-header { position: fixed; inset: 0 0 auto; z-index: 90; display: flex; align-items: center; justify-content: flex-start; gap: 12px; height: 76px; padding: 0 clamp(18px, 3.2vw, 52px); background: var(--site-header-bg); border-bottom: 1px solid var(--site-border); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: box-shadow .2s ease, background .2s ease; }
 /* Docsify renders an .app-nav only when a navbar exists; keep it out of the header if enabled. */
 .app-nav { display: none; }
 .site-header.is-scrolled { box-shadow: 0 10px 34px rgba(5, 12, 26, .13); }
-.site-brand { grid-column: 1; justify-self: start; display: flex; align-items: center; flex: 0 0 auto; gap: 10px; color: var(--site-text); text-decoration: none; line-height: 1.03; border-radius: 10px; }
+.brand-cluster { display: flex; align-items: center; gap: clamp(12px, 1.6vw, 24px); flex: 1 1 auto; min-width: 0; overflow: hidden; }
+.site-brand { display: flex; align-items: center; flex: 0 0 auto; gap: 10px; color: var(--site-text); text-decoration: none; line-height: 1.03; border-radius: 10px; }
 .site-brand img { display: block; border-radius: 9px; box-shadow: 0 5px 14px #131b362b; }
 .site-brand span { display: flex; flex-direction: column; gap: 3px; white-space: nowrap; }
 .site-brand strong { font-size: 16px; font-weight: 760; letter-spacing: -.3px; color: var(--site-strong); }
 .site-brand small { font-size: 10px; letter-spacing: 1.65px; font-weight: 700; color: var(--site-muted); text-transform: uppercase; }
-.site-topnav { grid-column: 2; justify-self: start; display: flex; align-items: center; gap: 2px; flex: 0 1 auto; min-width: 0; overflow: hidden; }
+.site-topnav { display: flex; align-items: center; gap: 2px; flex: 0 1 auto; min-width: 0; overflow: hidden; }
 .site-topnav a { position: relative; color: var(--site-muted); text-decoration: none; border-radius: 9px; padding: 8px 11px; font-size: 13px; font-weight: 650; white-space: nowrap; transition: background .18s, color .18s; }
 .site-topnav a:hover { background: var(--site-surface-soft); color: var(--site-strong); }
 .site-topnav a[aria-current="page"] { background: var(--site-accent-soft); color: var(--site-accent); font-weight: 750; }
 .site-topnav a[aria-current="page"]::after { content: ''; position: absolute; left: 11px; right: 11px; bottom: 3px; height: 2px; border-radius: 2px; background: currentColor; opacity: .75; }
-.site-topnav a.nav-history::after { content: '↗'; margin-left: 4px; font-size: 10px; line-height: 1; opacity: .7; }
-.site-topnav a[aria-current="page"].nav-history::after { content: '↗'; position: static; left: auto; right: auto; bottom: auto; height: auto; background: none; opacity: .85; }
-.header-actions { grid-column: 3; justify-self: end; display: flex; align-items: center; gap: 8px; flex: 0 0 auto; padding-left: 8px; }
+.header-tools { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; padding-left: 10px; background: var(--site-header-bg); position: relative; z-index: 2; }
+.header-search { position: relative; display: flex; align-items: center; width: 208px; }
+.header-search > svg { position: absolute; left: 11px; color: var(--site-muted); pointer-events: none; }
+.header-search input { width: 100%; height: 36px; padding: 0 12px 0 34px; border: 1px solid var(--site-border); border-radius: 10px; background: var(--site-surface-soft); color: var(--site-text); font: inherit; font-size: 12.5px; }
+.header-search input::placeholder { color: var(--site-muted); }
+.header-search input:focus { border-color: var(--site-accent); background: var(--site-surface); }
 .header-icon { width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; color: var(--site-muted); background: transparent; border: 1px solid transparent; border-radius: 10px; cursor: pointer; padding: 0; }
 .header-icon:hover { border-color: var(--site-border); background: var(--site-surface-soft); color: var(--site-strong); }
 .header-github { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; color: var(--site-text); border: 1px solid var(--site-border); border-radius: 10px; font-weight: 700; font-size: 12px; text-decoration: none; }
@@ -118,8 +121,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
 .sidebar .search .matching-post p { color: var(--site-muted); }
 .sidebar .search .matching-post:hover { background: var(--site-surface-soft); }
 .sidebar .search .results-panel .empty { color: var(--site-muted); }
-.sidebar-toggle { z-index: 92; bottom: 18px; border-radius: 12px; background: var(--site-surface); border: 1px solid var(--site-border); box-shadow: var(--site-shadow); }
-.sidebar-toggle-button { background: var(--site-accent); }
+.sidebar-toggle { position: fixed; z-index: 92; top: 88px; left: 12px; bottom: auto; width: 40px; height: 40px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 11px; background: var(--site-surface); border: 1px solid var(--site-border); box-shadow: var(--site-shadow); }
+.sidebar-toggle-button { width: 20px; height: 14px; padding: 0; display: flex; flex-direction: column; justify-content: space-between; background: transparent; border-radius: 0; }
+.sidebar-toggle-button span { display: block; width: 100%; height: 2px; border-radius: 2px; background: var(--site-accent); }
 .content { left: 275px; padding: 112px clamp(22px, 5vw, 84px) 64px; }
 .markdown-section { max-width: 1050px; margin: 0 auto; padding: 0 0 90px; color: var(--site-text); font-size: 15px; line-height: 1.85; }
 .markdown-section > :first-child { margin-top: 0; }
@@ -153,14 +157,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
 .markdown-section .anchor span { color: var(--site-strong); }
 .markdown-section mark, .search .matching-post mark { background: var(--site-mark-bg); color: var(--site-mark-text); border-radius: 3px; padding: 0 2px; }
 
-/* Document figures and image placeholders (replace the frame with a real <img> later) */
-.doc-figure { margin: 28px 0; }
+/* Figures: put the final image at src; the dashed frame only shows until it loads. */
+.doc-figure { margin: 28px 0; text-align: center; }
+.doc-figure img { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; border-radius: 12px; border: 1px solid var(--site-border); background: var(--site-surface-soft); }
 .doc-figure-frame { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 190px; padding: 28px 24px; text-align: center; border: 1.5px dashed var(--site-border); border-radius: 14px; background: var(--site-surface-soft); }
 .doc-figure-tag { font-size: 10px; letter-spacing: 1.5px; font-weight: 800; text-transform: uppercase; color: var(--site-accent); background: var(--site-accent-soft); border-radius: 999px; padding: 3px 10px; }
 .doc-figure-frame strong { color: var(--site-strong); font-size: 15px; font-weight: 750; }
 .doc-figure-note { max-width: 54ch; font-size: 12.5px; line-height: 1.7; color: var(--site-muted); }
 .doc-figure-hint { font-size: 11.5px; color: var(--site-muted); opacity: .85; }
 .doc-figure figcaption { margin-top: 10px; font-size: 12.5px; line-height: 1.6; text-align: center; color: var(--site-muted); }
+.doc-figure.is-loaded .doc-figure-frame { display: none; }
 .markdown-section .doc-figure { padding: 0; }
 
 /* Prism tokens: explicit palette so nothing falls back to a dark-on-dark default */
@@ -251,20 +257,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
   .site-header { padding: 0 20px; gap: 10px; }
   .site-topnav a { padding: 8px 9px; font-size: 12.5px; }
   .header-github { display: none; }
+  .header-search { width: 178px; }
   .content { padding-left: 36px; padding-right: 36px; }
   .home-hero { grid-template-columns: 1fr .6fr; }
 }
 @media (max-width: 900px) {
   .site-topnav { display: none; }
+  .header-search { width: 200px; }
 }
 @media (max-width: 768px) {
-  .site-header { height: 64px; padding: 0 15px 0 58px; gap: 10px; }
+  .site-header { height: 64px; padding: 0 15px; gap: 10px; }
   .site-brand img { height: 29px; width: 29px; }
   .site-brand strong { font-size: 14px; }
   .site-brand small { font-size: 9px; }
+  .header-search { display: none; }
   #scroll-progress { top: 63px; }
   .sidebar { top: 64px; width: 280px; }
-  .sidebar-toggle { position: fixed; top: 14px; bottom: auto; left: 10px; height: 35px; width: 38px; }
+  .sidebar-toggle { top: 74px; left: 10px; width: 38px; height: 38px; }
   .content { left: 0; padding: 93px 18px 42px; }
   .markdown-section { font-size: 14px; padding-bottom: 50px; }
   .markdown-section h2 { font-size: 21px; margin-top: 35px; }
@@ -276,7 +285,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
   .main-anchor { top: 64px; }
 }
 @media (max-width: 400px) {
-  .header-actions { gap: 2px; }
+  .header-tools { gap: 2px; }
   .header-icon { width: 32px; height: 35px; }
   .site-brand small { letter-spacing: .8px; }
   .home-hero h1 { font-size: 30px !important; }

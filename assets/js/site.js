@@ -8,7 +8,7 @@
   var themeColorMeta = document.getElementById('theme-color');
   var header = document.querySelector('.site-header');
   var progress = document.getElementById('scroll-progress');
-  var searchButton = document.getElementById('search-shortcut');
+  var headerSearch = document.getElementById('header-search');
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-topnav a'));
   var MODES = ['auto', 'light', 'dark'];
   var MODE_LABELS = { auto: '跟随系统', light: '浅色', dark: '深色' };
@@ -143,26 +143,58 @@
     if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
   }
 
-  /* ---------- search shortcut ---------- */
+  /* ---------- search: the header box drives docsify's sidebar search ---------- */
+
+  function sidebarSearch() {
+    return document.querySelector('.sidebar .search input');
+  }
+
+  function openSidebar() {
+    if (!document.body.classList.contains('close')) return;
+    var sidebarButton = document.querySelector('.sidebar-toggle');
+    if (sidebarButton) sidebarButton.click();
+  }
+
+  function pushSearchValue(value) {
+    var box = sidebarSearch();
+    if (!box) return null;
+    openSidebar();
+    box.value = value;
+    box.dispatchEvent(new Event('input', { bubbles: true }));
+    return box;
+  }
+
+  if (headerSearch) {
+    headerSearch.addEventListener('input', function () {
+      pushSearchValue(headerSearch.value);
+    });
+    headerSearch.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        focusSearch();
+      } else if (event.key === 'Escape') {
+        headerSearch.blur();
+      }
+    });
+  }
 
   function focusSearch() {
     closeMenu(false);
-    var box = document.querySelector('.sidebar .search input');
+    var box = pushSearchValue(headerSearch ? headerSearch.value : '');
     if (!box) return;
-    if (document.body.classList.contains('close')) {
-      var sidebarButton = document.querySelector('.sidebar-toggle');
-      if (sidebarButton) sidebarButton.click();
-    }
     box.focus();
     box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-  if (searchButton) searchButton.addEventListener('click', focusSearch);
-
   document.addEventListener('keydown', function (event) {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
       event.preventDefault();
-      focusSearch();
+      if (headerSearch && headerSearch.offsetParent !== null) {
+        headerSearch.focus();
+        headerSearch.select();
+      } else {
+        focusSearch();
+      }
     }
   });
 
