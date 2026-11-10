@@ -22,7 +22,7 @@
     <a class="home-card" href="#/unity/motivation.md"><span class="home-card-icon" aria-hidden="true">◈</span><strong>为什么写这套教程</strong><p>Mono 教程为什么失效、社区魔改走了哪条路，以及为什么拿这款游戏当例子。</p><span class="card-cta">阅读初衷 →</span></a>
     <a class="home-card" href="#/unity/ecosystem.md"><span class="home-card-icon" aria-hidden="true">◎</span><strong>Unity MOD 生态</strong><p>Mono、IL2CPP、HybridCLR 三代技术栈，代表游戏、常用框架与经典 MOD。</p><span class="card-cta">看生态梳理 →</span></a>
     <a class="home-card" href="#/unity/full-guide.md"><span class="home-card-icon" aria-hidden="true">▣</span><strong>开发完整指南</strong><p>从空工程到第一个可用功能：宿主、反射、Hook、配置与回滚路径。</p><span class="card-cta">开始实践 →</span></a>
-    <a class="home-card" href="#/unity/case-keybinds.md"><span class="home-card-icon" aria-hidden="true">⌘</span><strong>实战案例</strong><p>快捷键、自定义提示、窗口监听、设置面板：四篇能照着做完的完整案例。</p><span class="card-cta">进入案例 →</span></a>
+    <a class="home-card" href="#/unity/case-keybinds.md"><span class="home-card-icon" aria-hidden="true">⌘</span><strong>实战案例</strong><p>快捷键、提示、窗口监听、设置面板、自动点赞、商店跳过与 Hook 拦截，八篇可照着做的完整案例。</p><span class="card-cta">进入案例 →</span></a>
     <a class="home-card" href="#/unity/pitfalls.md"><span class="home-card-icon" aria-hidden="true">⚠</span><strong>实践中的坑</strong><p>按“现象 → 根因 → 做法”整理的故障记录，包含资源注入与原生列表。</p><span class="card-cta">对照排查 →</span></a>
     <a class="home-card" href="#/tools/downloads.md"><span class="home-card-icon" aria-hidden="true">⌁</span><strong>工具与下载</strong><p>框架、反编译、资源、音视频与调试工具的分组清单和版本对照。</p><span class="card-cta">查看工具 →</span></a>
   </div>

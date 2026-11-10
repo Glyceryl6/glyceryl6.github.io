@@ -26,6 +26,10 @@
 | [自定义提示](unity/case-tips.md) | 调用原版提示窗口，处理失败原因与文字显示 |
 | [窗口与场景监听](unity/case-window.md) | 判断当前界面、对局状态与清理时机 |
 | [设置面板与配置](unity/case-settings.md) | 原生设置页、配置校验与迁移 |
+| [自动点赞](unity/case-auto-praise.md) | 监听结算面板、读阶段与状态、触发原生点击 |
+| [商店跳过](unity/case-shop-skip.md) | 读商品数据结构、判断买不起、调用原生离开 |
+| [快捷短语与表情](unity/case-quickchat.md) | 异步窗口就绪判断与原生按钮触发 |
+| [拦截与替换](unity/case-interception.md) | 截图提示替换、Hook 开始请求取消机器人补位 |
 
 ## 经验与排错
 

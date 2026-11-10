@@ -15,6 +15,10 @@
   - [自定义提示](unity/case-tips.md)
   - [窗口与场景监听](unity/case-window.md)
   - [设置面板与配置](unity/case-settings.md)
+  - [自动点赞](unity/case-auto-praise.md)
+  - [商店跳过](unity/case-shop-skip.md)
+  - [快捷短语与表情](unity/case-quickchat.md)
+  - [拦截与替换](unity/case-interception.md)
 
 - **经验与排错**
   - [开发手记](unity/dev-notes.md)

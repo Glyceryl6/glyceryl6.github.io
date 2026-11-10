@@ -30,5 +30,9 @@ window.GlycerylSearchPaths = [
   "/unity/case-keybinds",
   "/unity/case-tips",
   "/unity/case-window",
-  "/unity/case-settings"
+  "/unity/case-settings",
+  "/unity/case-auto-praise",
+  "/unity/case-shop-skip",
+  "/unity/case-quickchat",
+  "/unity/case-interception"
 ];
