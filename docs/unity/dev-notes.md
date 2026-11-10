@@ -76,7 +76,7 @@
     <span class="doc-figure-note">说明：设置界面里某一个汉字缺失、同一字在普通界面正常。把它和普通界面的同字并排，能直观看出差异。</span>
     <span class="doc-figure-hint">放到 docs/assets/images/outlined-font-missing.png 即可自动显示</span>
   </div>
-  <figcaption>图 1 · 建议配图：带黑色描边的设置字体与普通字体的同字对比。</figcaption>
+  <figcaption>图 1 · 带黑色描边的设置字体与普通字体的同字对比。</figcaption>
 </figure>
 
 这些结论后来都写进了[实践中的坑](unity/pitfalls.md)，遇到具体现象时可以直接对照。
