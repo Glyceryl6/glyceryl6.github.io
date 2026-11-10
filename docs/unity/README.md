@@ -40,7 +40,7 @@
 | [常见问题](unity/troubleshooting.md) | 从第一条真正的构建错误入手 |
 | [风险及使用声明](unity/safety.md) | 第三方插件的账号与合规风险 |
 
-工具清单见[工具与下载](tools/downloads.md)；SDK 相关的原生调用约定见 [SDK 专题](sdk/README.md)。Minecraft 旧教程已迁到独立的<a href="history.html" target="_self">历史教程</a>页面。
+工具清单见[工具与下载](tools/downloads.md)；SDK 相关的原生调用约定见 [SDK 专题](sdk/README.md)。
 
 ## 官方和开源资料
 

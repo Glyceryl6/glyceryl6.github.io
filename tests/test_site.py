@@ -29,13 +29,14 @@ class PublicSiteTests(unittest.TestCase):
             self.assertFalse((dist / ".git").exists())
             self.assertFalse((dist / "tests").exists())
             self.assertFalse((dist / "scripts").exists())
+            self.assertFalse((dist / "history.html").exists())
 
     def test_docsify_router_and_ui_assets(self):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn("basePath: 'docs/'", html)
         self.assertIn("homepage: 'home.md'", html)
         self.assertIn('id="theme-toggle"', html)
-        self.assertIn('id="search-shortcut"', html)
+        self.assertIn('id="header-search"', html)
         self.assertIn('assets/js/site.js', html)
 
     def test_hybridclr_guides_are_present_and_self_contained(self):
@@ -61,17 +62,19 @@ class PublicSiteTests(unittest.TestCase):
         self.assertIn("glyceryl-theme-mode", script)
         self.assertIn("prefers-color-scheme: dark", script)
 
-    def test_history_site_is_separate_from_the_main_navigation(self):
+    def test_minecraft_archive_is_kept_but_unlisted(self):
         main = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('href="history.html"', main)
+        self.assertNotIn("history.html", main)
         self.assertNotIn("#/minecraft/README.md", main)
-        self.assertTrue((ROOT / "history.html").is_file())
         sidebar = (ROOT / "docs/_sidebar.md").read_text(encoding="utf-8")
-        self.assertNotIn("minecraft/目录.md", sidebar)
-        self.assertIn("history.html", sidebar)
-        history = (ROOT / "history.html").read_text(encoding="utf-8")
-        self.assertIn("history-sidebar.md", history)
-        self.assertIn("homepage: 'history.md'", history)
+        self.assertNotIn("minecraft/", sidebar)
+        self.assertNotIn("history.html", sidebar)
+        home = (ROOT / "docs/home.md").read_text(encoding="utf-8")
+        self.assertNotIn("history.html", home)
+        # Documents are preserved even though the entry is gone.
+        self.assertTrue((ROOT / "docs/minecraft/README.md").is_file())
+        self.assertTrue((ROOT / "docs/minecraft/目录.md").is_file())
+        self.assertTrue((ROOT / "docs/0序章/建议.md").is_file())
 
     def test_public_docs_include_caution_and_do_not_offer_hotfix_sources(self):
         warning = (ROOT / "docs/unity/safety.md").read_text(encoding="utf-8")

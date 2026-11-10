@@ -71,9 +71,9 @@ def verify_new_links() -> int:
 
 
 def verify_built_output(dist: Path) -> int:
-    required = ["index.html", "history.html", ".nojekyll", "docs/home.md", "docs/history.md",
-                "docs/_sidebar.md", "docs/history-sidebar.md",
-                "assets/css/site.css", "assets/js/site.js", "assets/js/history-search-paths.js"]
+    required = ["index.html", ".nojekyll", "docs/home.md",
+                "docs/_sidebar.md",
+                "assets/css/site.css", "assets/js/site.js"]
     for name in required:
         if not (dist / name).is_file():
             raise AssertionError(f"发布产物缺少：{name}")

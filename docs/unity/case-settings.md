@@ -71,6 +71,9 @@ var fontSize = config.Bind("UI", "FontSize", 18,
 3. 不删除旧节，避免用户降级时丢配置。
 
 <figure class="doc-figure">
+  <img src="images/mod-settings.png" alt="MOD 设置页" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：MOD 设置页">
     <span class="doc-figure-tag">图片占位</span>
     <strong>MOD 设置页</strong>

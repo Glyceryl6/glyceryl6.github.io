@@ -24,6 +24,9 @@
 ### 资源通常不在一个地方
 
 <figure class="doc-figure">
+  <img src="images/addressables-folders.png" alt="Addressables 资源目录" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：Addressables 资源目录">
     <span class="doc-figure-tag">图片占位</span>
     <strong>Addressables 资源目录</strong>

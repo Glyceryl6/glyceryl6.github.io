@@ -24,8 +24,8 @@
     <a class="home-card" href="#/unity/full-guide.md"><span class="home-card-icon" aria-hidden="true">▣</span><strong>开发完整指南</strong><p>从空工程到第一个可用功能：宿主、反射、Hook、配置与回滚路径。</p><span class="card-cta">开始实践 →</span></a>
     <a class="home-card" href="#/unity/case-keybinds.md"><span class="home-card-icon" aria-hidden="true">⌘</span><strong>实战案例</strong><p>快捷键、自定义提示、窗口监听、设置面板：四篇能照着做完的完整案例。</p><span class="card-cta">进入案例 →</span></a>
     <a class="home-card" href="#/unity/pitfalls.md"><span class="home-card-icon" aria-hidden="true">⚠</span><strong>实践中的坑</strong><p>按“现象 → 根因 → 做法”整理的故障记录，包含资源注入与原生列表。</p><span class="card-cta">对照排查 →</span></a>
-    <a class="home-card" href="history.html"><span class="home-card-icon" aria-hidden="true">◆</span><strong>Minecraft 历史教程</strong><p>1.19.2 / Forge 43.2.0 的旧教程与截图，已迁到独立页面，保留原有地址。</p><span class="card-cta">前往历史教程 →</span></a>
+    <a class="home-card" href="#/tools/downloads.md"><span class="home-card-icon" aria-hidden="true">⌁</span><strong>工具与下载</strong><p>框架、反编译、资源、音视频与调试工具的分组清单和版本对照。</p><span class="card-cta">查看工具 →</span></a>
   </div>
   <div class="home-note"><span class="note-marker" aria-hidden="true">⚑</span><div><strong>关于第三方 MOD 与游戏规则</strong><p>本站不是任何游戏的官方项目。部分游戏禁止或限制未经许可的插件；使用第三方工具可能导致封号。本站仅提供公开、合规的通用技术资料，不公开私有源码、游戏热更新资源或反作弊绕过方法。<a href="#/unity/safety.md">阅读完整说明 →</a></p></div></div>
-  <p class="home-footer">由 Glyceryl6 维护 · 历史文章保留原位置 · <a href="#/sdk/README.md">SDK 文档</a>与<a href="#/about/changelog.md">站点更新记录</a>同样在左侧目录中。</p>
+  <p class="home-footer">由 Glyceryl6 维护 · 全部内容围绕 Unity / IL2CPP / HybridCLR 的 MOD 开发 · <a href="#/sdk/README.md">SDK 文档</a>与<a href="#/about/changelog.md">站点更新记录</a>同样在左侧目录中。</p>
 </div>

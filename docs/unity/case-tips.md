@@ -107,6 +107,9 @@ if (tips != IntPtr.Zero)
 - 如果发现“同一个字在 A 处正常、在 B 处消失”，优先检查 B 处的裁剪区域、文本框宽度与描边宽度，而不是换字体。
 
 <figure class="doc-figure">
+  <img src="images/native-tip.png" alt="游戏内自定义提示效果" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：游戏内自定义提示效果">
     <span class="doc-figure-tag">图片占位</span>
     <strong>游戏内提示效果</strong>

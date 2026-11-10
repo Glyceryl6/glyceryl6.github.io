@@ -104,6 +104,9 @@ else
 - 重试要有上限和退避，不要无限循环。
 
 <figure class="doc-figure">
+  <img src="images/overlay-in-battle.png" alt="对局中的 MOD 覆盖层" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：对局中的 MOD 覆盖层">
     <span class="doc-figure-tag">图片占位</span>
     <strong>对局中的覆盖层</strong>

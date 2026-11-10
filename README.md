@@ -1,6 +1,6 @@
 # Glyceryl's Developer Hub
 
-个人开发笔记与教程网站：**Unity IL2CPP + HybridCLR 游戏 MOD 开发、BepInEx 6 工程实践、AstralParty.Modding.SDK 公开知识及开发工具说明**，并保留早期 Minecraft 模组教程。
+个人开发笔记与教程网站：**Unity IL2CPP + HybridCLR 游戏 MOD 开发、BepInEx 6 工程实践、AstralParty.Modding.SDK 公开知识及开发工具说明**。早期 Minecraft 教程仅作仓库归档，不再提供入口。
 
 网站地址：<https://glyceryl6.github.io/>
 
@@ -29,17 +29,16 @@
 | Unity / IL2CPP / HybridCLR | [专题首页](https://glyceryl6.github.io/#/unity/README.md) |
 | SDK | [API 与接入文档](https://glyceryl6.github.io/#/sdk/README.md) |
 | 开发工具 | [工具专题](https://glyceryl6.github.io/#/tools/README.md) · [下载清单](https://glyceryl6.github.io/#/tools/downloads.md) |
-| Minecraft 旧教程（1.19.2 / Forge 43.2.0） | [历史教程独立页](https://glyceryl6.github.io/history.html)（顶部导航“历史教程”） |
 | 网站使用与发布原则 | [关于本站](https://glyceryl6.github.io/#/about/README.md) · [公开边界](https://glyceryl6.github.io/#/about/publication-policy.md) |
 
-仓库中的 `docs/` 是文档源文件；`docs/home.md` 是首页，`docs/history.md` 是历史教程首页，两者分别由 `index.html` 与 `history.html` 加载。旧教程仍位于 `docs/0序章/`、`docs/1基础/`、`docs/2进阶/`、`docs/3杂七杂八/`，**目录和历史链接不变**，但不再出现在主站侧边栏。其中有一些原本尚未写作的 0 字节页面，并未擅自替换成虚构内容。
+仓库中的 `docs/` 是文档源文件；`docs/home.md` 是首页。早期的 Minecraft 教程仍位于 `docs/0序章/`、`docs/1基础/`、`docs/2进阶/`、`docs/3杂七杂八/`，**文件按原样保留**，但已经过期，站点不再提供入口。
 
 ## 站点特性
 
 - **配色**：顶部按钮提供“跟随系统 / 浅色 / 深色”三档；默认跟随系统，选择只保存在本机浏览器。
-- **导航**：分类导航紧跟 Logo 右侧，右侧按钮固定，二者不会重叠；窄屏下导航收起，改用左侧目录。
-- **历史教程**：顶部“历史教程”进入独立页面 `history.html`，该页有自己的导航栏，可返回主站。
-- **搜索**：左侧目录搜索框，`Ctrl + K` / `⌘ + K` 聚焦；主站与历史教程各有独立索引。
+- **导航**：分类导航与 Logo 放在同一个容器里，右侧是搜索框与按钮；窄屏下导航收起，改用左侧目录。
+- **搜索**：顶部搜索框内嵌图标，输入即同步到左侧搜索面板；`Ctrl + K` / `⌘ + K` 可直接聚焦。
+- **侧边栏**：移动端的展开按钮位于左上角、导航栏下方，不再压在正文上。
 
 ## 本地预览
 
@@ -67,7 +66,7 @@ python3 scripts/verify_site.py --dist _site
 
 ## 内容与版权
 
-- Minecraft 历史稿件按原样保留；旧 API 与链接可能失效，开发前核对对应版本。
+- 早期 Minecraft 稿件按原样保留在仓库中，但内容已过期，站点不提供入口。
 - 新增的 Unity / IL2CPP / HybridCLR 文档是公开资料与工程经验的整理，不提供私有 AstralProbe 代码和商业游戏资源。
 - 引用的第三方库、工具与文章均保留出处；不主张拥有其商标、源代码或文档版权。
 - 重要安全边界参阅[公开内容政策](https://glyceryl6.github.io/#/about/publication-policy.md)。

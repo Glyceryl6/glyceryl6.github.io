@@ -39,9 +39,6 @@
   - [独立 MOD 导出](tools/mod-forge.md)
   - [项目与示例](projects/README.md)
 
-- **历史教程**
-  - <a href="history.html" target="_self">Minecraft 1.19.2 归档</a>
-
 - **关于**
   - [项目公开边界](about/publication-policy.md)
   - [版本记录](about/changelog.md)

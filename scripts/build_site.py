@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 ALLOWED_DOC_SUFFIXES = {".md", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif"}
 ALLOWED_ASSET_SUFFIXES = {".css", ".js", ".svg", ".png", ".webp", ".woff2"}
-PUBLIC_ROOT_FILES = {"index.html", "history.html", ".nojekyll"}
+PUBLIC_ROOT_FILES = {"index.html", ".nojekyll"}
 
 
 def copy_tree(src: Path, dst: Path, allowed_suffixes: set[str]) -> int:
