@@ -116,6 +116,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, [role="menuitemradio
 .sidebar .search { margin: 0 5px 14px 0; padding: 0; border: none; }
 .sidebar .search input { width: 100%; background: var(--site-surface-soft); border: 1px solid var(--site-border); border-radius: 11px; color: var(--site-text); padding: 11px 12px; font: inherit; font-size: 12px; }
 .sidebar .search input::placeholder { color: var(--site-muted); }
+/* Desktop uses the header search box; the sidebar keeps only the results panel. */
+@media (min-width: 769px) {
+  .sidebar .search input { display: none; }
+  .sidebar .search { margin: 0 5px 10px 0; }
+}
 .sidebar .search .results-panel { background: var(--site-surface); color: var(--site-text); border-radius: 11px; }
 .sidebar .search .matching-post, .sidebar .search .matching-post h2 { color: var(--site-text); }
 .sidebar .search .matching-post p { color: var(--site-muted); }
