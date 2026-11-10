@@ -4,7 +4,7 @@
 
 网站地址：<https://glyceryl6.github.io/>
 
-> **非官方声明：** 本站与《吉星派对》等商业游戏的开发商、发行商无关联。未经许可的第三方插件可能违反游戏规则并导致封号，即使仅私下使用也不保证安全。本站不公开私有 MOD、游戏热更新源码的获取方式、未经授权的游戏资源或反作弊绕过方法。详见[完整风险声明](https://glyceryl6.github.io/#/unity/safety.md)。
+> **非官方声明：** 本站与《吉星派对》等商业游戏的开发商、发行商无关联。未经许可的第三方插件可能违反游戏规则并导致封号，即使仅私下使用也不保证安全。本站不公开尚未开源的 MOD、游戏热更新源码的获取方式、未经授权的游戏资源或反作弊绕过方法。详见[完整风险声明](https://glyceryl6.github.io/#/unity/safety.md)。
 
 ## 重点内容
 
@@ -67,7 +67,7 @@ python3 scripts/verify_site.py --dist _site
 ## 内容与版权
 
 - 早期 Minecraft 稿件按原样保留在仓库中，但内容已过期，站点不提供入口。
-- 新增的 Unity / IL2CPP / HybridCLR 文档是公开资料与工程经验的整理，不提供私有 AstralProbe 代码和商业游戏资源。
+- 新增的 Unity / IL2CPP / HybridCLR 文档是公开资料与工程经验的整理，不提供尚未公开的 AstralProbe 代码和商业游戏资源。
 - 引用的第三方库、工具与文章均保留出处；不主张拥有其商标、源代码或文档版权。
 - 重要安全边界参阅[公开内容政策](https://glyceryl6.github.io/#/about/publication-policy.md)。
 

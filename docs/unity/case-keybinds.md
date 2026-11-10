@@ -126,7 +126,7 @@ if (method == IntPtr.Zero ||
 - **输入热区太大。** 为了“点哪都能操作”而铺一层全屏热区，结果地图拖不动了。热区只应覆盖真正需要响应的区域，列表内的滚轮只滚列表。
 
 <figure class="doc-figure">
-  <img src="images/shortcut-settings.png" alt="MOD 快捷键设置界面" loading="lazy"
+  <img src="assets/images/Snipaste_2026-11-08_12-35-16.png" alt="MOD 快捷键设置界面" loading="lazy"
        onload="this.parentNode.classList.add('is-loaded')"
        onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：MOD 快捷键设置界面">

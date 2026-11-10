@@ -130,7 +130,7 @@ public class Plugin : BasePlugin
 完成标志：`Astral Probe loaded.` 出现，游戏不闪退。
 
 <figure class="doc-figure">
-  <img src="images/bepinex-log.png" alt="BepInEx 日志输出" loading="lazy"
+  <img src="assets/images/bepinex-log.png" alt="BepInEx 日志输出" loading="lazy"
        onload="this.parentNode.classList.add('is-loaded')"
        onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：BepInEx 日志输出">

@@ -17,6 +17,19 @@
 
 **注意：** BepInEx 5 只支持 Unity Mono，不适用于 IL2CPP 游戏。看到一个教程让你往 IL2CPP 游戏里放 BepInEx 5，可以直接跳过。
 
+<figure class="doc-figure">
+  <img src="assets/images/bepinex-builds.png" alt="BepInEx Bleeding Edge 构建列表" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
+  <div class="doc-figure-frame" role="img" aria-label="占位图：BepInEx 构建列表">
+    <span class="doc-figure-tag">图片占位</span>
+    <strong>BepInEx 构建列表</strong>
+    <span class="doc-figure-note">说明：Bleeding Edge 页面里选择 `Unity.IL2CPP-win-x64` 的位置，以及构建编号与下载按钮。</span>
+    <span class="doc-figure-hint">放到 docs/assets/images/bepinex-builds.png 即可自动显示</span>
+  </div>
+  <figcaption>图 1 · 建议配图：BepInEx 下载页的 IL2CPP 构建选项。</figcaption>
+</figure>
+
 ## 二、运行时访问与 Hook
 
 | 包 / 项目 | 用途 | 当前版本 |

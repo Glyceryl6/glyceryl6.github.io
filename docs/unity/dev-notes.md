@@ -60,10 +60,23 @@
 
 ## 六、几条反直觉的结论
 
-1. **缺字通常不是字库缺字。** 同一个“键”字在“按键”里正常、在“快捷键”里缺失，很容易被当成字体缺字。最终确认：这个游戏的字体是**按需补字形**的，只有在该字被用到时才补进字库，因此个别字短暂缺失属于游戏自身行为，不是 MOD 缺陷。真正需要 MOD 注意的是：**不要改写共享字体与材质**，否则会把这种正常行为放大成“整片文字消失”。
+1. **缺字要按字体层级判断，不是字库缺字。** 设置界面用的是一套**单独的、带黑色描边的字体**；它同样只在该字被用到时才补字形，所以个别字会短暂缺失。其他界面用的是原始字体库、只改了颜色，从来没有出现过缺字。看到缺字时先确认它出现在哪个字体层级，不要急着换字库或改字体。
 2. **`opaque=true` 不等于挡住点击。** 它只保护自身矩形，窗口之外的区域仍会穿透。
 3. **回放文件很小，因为它不是视频。** 那是命令流（命令 ID + 负载长度 + 负载），改扩展名永远不会变成 MP4。
 4. **在 Bundle 里搜 `MZ` 或 `.dll` 找不到程序集。** 缓存 Bundle 通常经过分块压缩，必须先解码 `TextAsset` 才能判断是不是有效程序集。
 5. **引用了热更新 DLL 也消不掉反射。** 编译期拿到类型，不等于运行时能操作对象；仍要经过宿主适配器，并处理程序集加载顺序。
+
+<figure class="doc-figure">
+  <img src="assets/images/outlined-font-missing.png" alt="设置界面带描边字体缺字示例" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
+  <div class="doc-figure-frame" role="img" aria-label="占位图：带描边字体缺字示例">
+    <span class="doc-figure-tag">图片占位</span>
+    <strong>带描边字体缺字示例</strong>
+    <span class="doc-figure-note">说明：设置界面里某一个汉字缺失、同一字在普通界面正常。把它和普通界面的同字并排，能直观看出差异。</span>
+    <span class="doc-figure-hint">放到 docs/assets/images/outlined-font-missing.png 即可自动显示</span>
+  </div>
+  <figcaption>图 1 · 建议配图：带黑色描边的设置字体与普通字体的同字对比。</figcaption>
+</figure>
 
 这些结论后来都写进了[实践中的坑](unity/pitfalls.md)，遇到具体现象时可以直接对照。

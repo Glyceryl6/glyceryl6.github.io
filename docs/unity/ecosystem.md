@@ -12,6 +12,20 @@
 
 三代之间不是平滑升级：第一代的“改 DLL 里的 IL”到了第二代就失效，第二代的“生成代理程序集”到了第三代又要额外处理解释器方法和后加载程序集。
 
+<figure class="doc-figure">
+  <img src="assets/images/stack-generations.png" alt="三代 Unity MOD 技术栈示意" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
+  <div class="doc-figure-frame" role="img" aria-label="占位图：三代技术栈示意">
+    <span class="doc-figure-tag">图片占位</span>
+    <strong>三代技术栈示意</strong>
+    <span class="doc-figure-note">说明：Mono → IL2CPP → IL2CPP + HybridCLR 三层结构图，标注代码位置、加载器与代理程序集的关系。</span>
+    <span class="doc-figure-hint">放到 docs/assets/images/stack-generations.png 即可自动显示</span>
+  </div>
+  <figcaption>图 1 · 建议配图：三代技术栈的结构对比。</figcaption>
+</figure>
+
+
 ## 代表性游戏与框架
 
 下面这些例子用来说明“每一代长什么样”，不构成对任何游戏 MOD 行为的评价或授权。

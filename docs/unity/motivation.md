@@ -59,7 +59,7 @@
 这不是要替开发者做游戏，而是**在自己玩的那一份里，把想要的东西补上**。长期在线还有附带好处：游戏会持续更新，而每次更新都是一次真实的兼容性测试。补丁能不能活过版本更新，比任何演示都更有说服力。
 
 <figure class="doc-figure">
-  <img src="images/game-home.png" alt="游戏主界面" loading="lazy"
+  <img src="assets/images/CN_Default.png" alt="游戏主界面" loading="lazy"
        onload="this.parentNode.classList.add('is-loaded')"
        onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：游戏主界面">
@@ -68,7 +68,6 @@
     <span class="doc-figure-note">说明：建议使用游戏官方公开的宣传图或主界面截图，用于说明这款游戏的美术风格与玩法场景。</span>
     <span class="doc-figure-hint">后续替换为 assets/images/ 下的图片；请确认图片来源与再发布权限</span>
   </div>
-  <figcaption>图 1 · 建议配图：游戏主界面或官方宣传图（需确认授权）。</figcaption>
 </figure>
 
 > 需要说明的是：这样做的前提是**只影响自己的客户端**，不修改联机对局中他人的体验，也不绕过游戏的公平性设计。相关风险见[使用声明](unity/safety.md)。

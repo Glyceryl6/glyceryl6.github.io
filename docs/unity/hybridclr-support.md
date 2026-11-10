@@ -54,6 +54,19 @@ F7 C1 00 00 00 F0 0F 85 ?? ?? ?? ?? 48 8B 05
 
 由于跳过了开头的 `-1` 判断，这个分支需要在 hook 里自行处理。
 
+<figure class="doc-figure">
+  <img src="assets/images/hybridclr-crash-log.png" alt="HybridCLR 游戏启动崩溃日志" loading="lazy"
+       onload="this.parentNode.classList.add('is-loaded')"
+       onerror="this.style.display='none'">
+  <div class="doc-figure-frame" role="img" aria-label="占位图：启动崩溃日志">
+    <span class="doc-figure-tag">图片占位</span>
+    <strong>启动崩溃日志</strong>
+    <span class="doc-figure-note">说明：BepInEx 日志里 `AccessViolationException` 与 `MetadataCache_GetTypeInfoFromTypeDefinitionIndex_Hook` 的完整堆栈，用来确认崩溃发生在插件加载之前。</span>
+    <span class="doc-figure-hint">放到 docs/assets/images/hybridclr-crash-log.png 即可自动显示</span>
+  </div>
+  <figcaption>图 1 · 建议配图：典型的 HybridCLR 启动崩溃日志。</figcaption>
+</figure>
+
 ## 就算不崩溃，还有三处不一致
 
 把启动崩溃修掉只是第一步。HybridCLR 让“运行时视图”和“启动时的静态视图”产生了系统性偏差，具体有三处。

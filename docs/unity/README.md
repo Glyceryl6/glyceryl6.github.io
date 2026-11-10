@@ -50,4 +50,4 @@
 - [Il2CppInterop](https://github.com/BepInEx/Il2CppInterop) · [HybridCLR 兼容 PR #251](https://github.com/BepInEx/Il2CppInterop/pull/251)
 - [SNWCreations/IL2CppSharp](https://github.com/SNWCreations/IL2CppSharp) · [IL2CppSharp.Hooking](https://github.com/SNWCreations/IL2CppSharp.Hooking)
 
-不公开 AstralProbe 私有源码、热更新资源、游戏完整代理 DLL 或未授权的数据。未来的公开示例会选择可合法分发的最小工程。
+AstralProbe 目前仍在私有开发，作者计划逐步公开源码；公开前不提供仓库访问，热更新资源、游戏完整代理 DLL 与未授权数据始终不会公开。

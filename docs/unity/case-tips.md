@@ -96,18 +96,8 @@ if (tips != IntPtr.Zero)
 
 如果你用“最上层窗口是谁”来判断当前界面，提示层（`UI.TipsWindow` / `TipsWindows`）会让你永远停在提示上。判断时要**显式跳过提示层与加载层**。
 
-## 四、关于文字显示
-
-有段时间，提示里的个别汉字不显示，第一反应是“字库缺字”或“MOD 写坏了字体”。后来确认：**这个游戏的字体是按需补字形的**——只有某个字第一次被用到时，才补进字体图集，所以个别字短暂缺失属于游戏自身行为，不是 MOD 缺陷。
-
-真正需要 MOD 注意的是：
-
-- **不要改写共享的字体、材质与字距参数。** 一旦共享对象被改坏，缺字会从“个别字”扩大成“整片文字消失”。
-- 需要描边、阴影时，**在单个文字对象上复制一份参数**，而不是改全局字体。
-- 如果发现“同一个字在 A 处正常、在 B 处消失”，优先检查 B 处的裁剪区域、文本框宽度与描边宽度，而不是换字体。
-
 <figure class="doc-figure">
-  <img src="images/native-tip.png" alt="游戏内自定义提示效果" loading="lazy"
+  <img src="assets/images/native-tip.png" alt="游戏内自定义提示效果" loading="lazy"
        onload="this.parentNode.classList.add('is-loaded')"
        onerror="this.style.display='none'">
   <div class="doc-figure-frame" role="img" aria-label="占位图：游戏内自定义提示效果">
@@ -127,4 +117,3 @@ if (tips != IntPtr.Zero)
 - [ ] 连续提示有合并或排队策略
 - [ ] 截图功能会先清掉提示
 - [ ] 判断当前界面时跳过提示层
-- [ ] 没有修改共享字体或材质
